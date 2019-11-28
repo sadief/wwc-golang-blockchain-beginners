@@ -2,7 +2,7 @@
 
 `touch main.go`{{execute}}
 
-<pre class="file" data-filename="app.js" data-target="append">
+<pre class="file" data-filename="main.go" data-target="append">
 package main
 
 import (
@@ -17,3 +17,5 @@ func main() {
 	http.ListenAndServe(port, nil)
 }
 </pre>
+
+`go run main.go`{{execute}}
