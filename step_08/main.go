@@ -9,11 +9,6 @@ import (
 	"time"
 )
 
-type Vote struct {
-	Voter     string
-	Candidate string
-}
-
 type Block struct {
 	Hash      string
 	PrevHash  string
