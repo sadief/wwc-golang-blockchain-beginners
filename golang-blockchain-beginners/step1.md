@@ -1,6 +1,8 @@
 # Spin up a Go Server
 
-```go
+`touch main.go`{{execute}}
+
+<pre class="file" data-filename="app.js" data-target="append">
 package main
 
 import (
@@ -14,6 +16,4 @@ func main() {
 	log.Printf("Listening on port %v", port)
 	http.ListenAndServe(port, nil)
 }
-```
-
-`echo "go run main.go"`{{execute}}
+</pre>
