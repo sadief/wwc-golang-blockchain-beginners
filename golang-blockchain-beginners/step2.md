@@ -1,4 +1,4 @@
-# Add Function to Create Genesis Block
+# Create A Genesis Block
 
 <pre class="file" data-filename="main.go" data-target="replace">
 package main
