@@ -59,3 +59,4 @@ func addNewBlock(w http.ResponseWriter, r *http.Request) {
 </pre>
 
 `go run main.go`{{execute}}
+`curl localhost:8080`{{execute}}

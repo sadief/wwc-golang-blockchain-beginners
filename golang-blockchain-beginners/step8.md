@@ -70,3 +70,4 @@ func createHash(b Block) string {
 </pre>
 
 `go run main.go`{{execute}}
+`curl localhost:8080`{{execute}}
