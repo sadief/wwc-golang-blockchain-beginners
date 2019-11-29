@@ -25,6 +25,6 @@ func main() {
 </pre>
 
 Let's see this thing work - click on the command below and watch your terminal logs. You should see
-`Listening on port :8080"
+`Listening on port :8080`
 
 `go run main.go`{{execute}}

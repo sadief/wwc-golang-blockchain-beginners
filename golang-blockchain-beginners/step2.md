@@ -2,7 +2,7 @@
 
 First thing we want to happen when our server starts is that is creates the initial block on the Blockchain. The `Genesis Block`.
 
-We'll define the function to just print something out for now and call it in `main`.
+We'll define the function to just print something out for now and call it inside of  `main`.
 
 Click the code below to replace the code in the editor so that we are calling `createGenesisBlock`.
 
@@ -33,4 +33,4 @@ func createGenesisBlock() {
 
 Now when we run the server we should see `Create first Block on the blockchain` in the terminal.
 
-`go run main.go`{{interrupt+execute}}
+`go run main.go`{{execute interrupt}}
