@@ -33,6 +33,8 @@ func createGenesisBlock() {
 	genesisBlock := Block{
 		Hash:      "",
 		Timestamp: t.String(),
+
+		//TODO Prev Hash
 		Voter:     "",
 		Candidate: "",
 	}
