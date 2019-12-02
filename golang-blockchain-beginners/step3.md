@@ -4,7 +4,7 @@ Let's add a `Block` struct which contains the fields we want on our Blockchain, 
 
 We'll add the following to our `main.go` right after our imports
 
-```
+```go
 type Block struct {
 	Hash      string
 	PrevHash  string

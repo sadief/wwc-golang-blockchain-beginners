@@ -1,8 +1,8 @@
 # Create A Genesis Block
 
-First thing we want to happen when our server starts is that is creates the initial block on the Blockchain. The `Genesis Block`.
+The first thing we want to do when our server starts is create the initial block on the Blockchain. The `Genesis Block`.
 
-We'll define the function to just print something out for now and call it inside of  `main`.
+We'll define the function to just print something out for now and call it by putting `createGenesisBlock()` inside of the `main` function.
 
 Click the code below to replace the code in the editor so that we are calling `createGenesisBlock`.
 
@@ -24,6 +24,7 @@ func main() {
 }
 </pre>
 
+Now we'll stub out our `createGenesisBlock` function, showing a log for now.
 
 <pre class="file" data-filename="main.go" data-target="append">
 func createGenesisBlock() {

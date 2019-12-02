@@ -1,6 +1,8 @@
 # Spin up a Go Server
 
-You can click on the commands in grey to run them, and you can click on the code to automatically copy it over into your terminal.
+The commands in grey can be run in the terminal automatically by clicking them.
+
+The code snippets can be copied to the editor automatically by clicking them.
 
 First thing we want to do is create a `main.go` file that we will run our code through.
 
