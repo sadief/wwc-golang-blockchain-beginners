@@ -1,5 +1,15 @@
 # Implement getBlockchain Function
 
+Now we are going to use a pretty-print library, `Spew` to print out our Blockchain when a GET request is made. We'll update the `getBlockchain` function to look like this
+
+```go
+func getBlockchain(w http.ResponseWriter, r *http.Request) {
+	log.Printf("Blockchain: %#v", Blockchain)
+}
+```
+
+Click the code below to copy it over to the editor with the updated function.
+
 <pre class="file" data-filename="main.go" data-target="replace">
 package main
 
@@ -41,6 +51,7 @@ func createGenesisBlock() {
 	t := time.Now()
 	genesisBlock := Block{
 		Hash:      "",
+		PrevHash:  "",
 		Timestamp: t.String(),
 		Voter:     "",
 		Candidate: "",
@@ -58,5 +69,7 @@ func addNewBlock(w http.ResponseWriter, r *http.Request) {
 }
 </pre>
 
-`go run main.go`{{execute}}
-`curl localhost:8080`{{execute}}
+Now we should be able to make a get request and see our Blockchain with it's first block printed out.
+
+`go run main.go`{{execute interrupt}}
+`curl localhost:8080`{{execute interrupt}}

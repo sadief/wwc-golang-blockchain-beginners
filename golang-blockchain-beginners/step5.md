@@ -59,6 +59,7 @@ func createGenesisBlock() {
 	t := time.Now()
 	genesisBlock := Block{
 		Hash:      "",
+		PrevHash:  "",
 		Timestamp: t.String(),
 		Voter:     "",
 		Candidate: "",
