@@ -72,4 +72,5 @@ func addNewBlock(w http.ResponseWriter, r *http.Request) {
 Now we should be able to make a get request and see our Blockchain with it's first block printed out.
 
 `go run main.go`{{execute interrupt T1}}
+
 `curl localhost:8080`{{execute interrupt T2}}

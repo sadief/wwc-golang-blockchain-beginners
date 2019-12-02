@@ -1,5 +1,16 @@
 # Create Vote struct
 
+We want to parse our request message into a `Vote` struct, so first we define it:
+
+```go
+type Vote struct {
+	Voter     string
+	Candidate string
+}
+```
+
+Click to copy the code into your editor.
+
 <pre class="file" data-filename="main.go" data-target="replace">
 package main
 
@@ -86,4 +97,4 @@ func createNewBlock(prevBlock Block, Voter, Candidate string) Block {
 }
 </pre>
 
-`go run main.go`{{execute}}
+Let's continue on to step 11.

@@ -1,5 +1,26 @@
 # Implement addNewBlock function
 
+Lastly, we'll implement the `addNewBlock` that we currently have stubbed out. This will handle the incoming POST request, and decode the body into the Vote struct. Then it will grab the last block, create a new one, and append it to the Blockchain.
+
+```go
+func addNewBlock(w http.ResponseWriter, r *http.Request) {
+	var v Vote
+	decoder := json.NewDecoder(r.Body)
+	err := decoder.Decode(&v)
+
+	if err != nil {
+		log.Printf("Error Decoding Body")
+	}
+	defer r.Body.Close()
+
+	lastBlock := Blockchain[len(Blockchain)-1]
+	newBlock := createNewBlock(lastBlock, v.Voter, v.Candidate)
+	Blockchain = append(Blockchain, newBlock)
+}
+```
+
+Click to add this code to the editor.
+
 <pre class="file" data-filename="main.go" data-target="replace">
 package main
 
@@ -98,7 +119,16 @@ func createNewBlock(prevBlock Block, Voter, Candidate string) Block {
 }
 </pre>
 
-`go run main.go`{{execute}}
-`curl localhost:8080`{{execute}}
-`curl -X POST localhost:8080 -d '{"Voter": "Sadie", "Candidate": "Cats"}'`{{execute}}
-`curl localhost:8080`{{execute}}
+
+Congratulations! You've made a Blockchain! Let's test it out:
+
+`go run main.go`{{execute interrupt T1}}
+
+Remember to see the logs you'll need to flip back into Terminal 1.
+`curl localhost:8080`{{execute T2}}
+
+Pop in your name and vote for cats or dogs!
+`curl -X POST localhost:8080 -d '{"Voter": "Name", "Candidate": "CatsorDogs"}'`{{execute T2}}
+
+And now let's have a look at the new block we created.
+`curl localhost:8080`{{execute T2}}

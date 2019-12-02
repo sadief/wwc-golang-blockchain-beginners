@@ -84,4 +84,4 @@ func createHash(b Block) string {
 }
 </pre>
 
-`go run main.go`{{execute}}
+We aren't doing anything with this just yet, so let's head to step 8.
