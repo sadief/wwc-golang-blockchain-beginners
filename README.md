@@ -7,6 +7,9 @@ Here you will find the exercises to follow along with the workshop `Golang and B
 
 You can find the slides for the workshop [here](FILL IN)
 
+## Katacode
+
+[Katacoda Workshop](http://bit.ly/2OCaB4O)
 
 ## Resources
 
