@@ -1,5 +1,20 @@
 # Write createHash function
 
+
+Now we'll implement a function to create the has for each of our blocks. This will take in a Block, concatenate the data, and hash it using the Go "crypto" library which we import in with `"crypto/sha256"`
+
+```go
+func createHash(b Block) string {
+	record := fmt.Sprintf("%v%v%v%v", b.Timestamp, b.Voter, b.Candidate, b.PrevHash)
+	h := sha256.New()
+	h.Write([]byte(record))
+	hashed := h.Sum(nil)
+	return hex.EncodeToString(hashed)
+}
+```
+
+Click the code below to copy to your editor.
+
 <pre class="file" data-filename="main.go" data-target="replace">
 package main
 
