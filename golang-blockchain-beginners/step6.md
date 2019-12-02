@@ -17,6 +17,7 @@ import (
 	"log"
 	"net/http"
 	"time"
+	"github.com/davecgh/go-spew/spew"
 )
 
 type Block struct {
@@ -61,7 +62,7 @@ func createGenesisBlock() {
 }
 
 func getBlockchain(w http.ResponseWriter, r *http.Request) {
-	log.Printf("Blockchain: %#v", Blockchain)
+	spew.Dump("Blockchain: %#v", Blockchain)
 }
 
 func addNewBlock(w http.ResponseWriter, r *http.Request) {

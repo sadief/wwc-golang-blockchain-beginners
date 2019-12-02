@@ -70,10 +70,9 @@ func createGenesisBlock() {
 }
 </pre>
 
-<pre class="file" data-filename="main.go" data-target="append">
 And now let's stub out these two functions
 
-
+<pre class="file" data-filename="main.go" data-target="append">
 func getBlockchain(w http.ResponseWriter, r *http.Request) {
 	log.Printf("Print out the Blockchain")
 }
@@ -84,8 +83,10 @@ func addNewBlock(w http.ResponseWriter, r *http.Request) {
 </pre>
 
 
-Now we can test each of these functions by starting the server and pinging it.
+Now we can test each of these functions by starting the server and pinging it. If you flip back to `Terminal 1` you should see the log statements for each curl request.
 
 `go run main.go`{{execute interrupt T1}}
+
 `curl localhost:8080`{{execute T2}}
+
 `curl -X POST localhost:8080`{{execute T2}}

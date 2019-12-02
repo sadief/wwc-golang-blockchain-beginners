@@ -24,7 +24,7 @@ func main() {
 }
 </pre>
 
-Now we'll stub out our `createGenesisBlock` function, showing a log for now.
+Now we'll stub out our `createGenesisBlock` function, showing a log for now. Click to add this to the bottom of our code. 
 
 <pre class="file" data-filename="main.go" data-target="append">
 func createGenesisBlock() {
