@@ -1,10 +1,9 @@
 # Golang and Blockchain for Beginners
 
-Here you will find the exercises to follow along with the workshop `Golang and Blockchain for Beginners` at Women Who Code CONNECT NYC on December 5th. This workshop will hopefully be accessible to those brand new to Golang and will provide an opportunity to get a feel for the language by creating a simple, Blockchain. These are step by step, to accommodate being able to follow along with the live coding. The slides will have the number for each step that you can jump ahead to.
-
+Here you will find the exercises to follow along with the workshop `Golang and Blockchain for Beginners` at Women Who Code CONNECT NYC on December 5th. This workshop will hopefully be accessible to those brand new to Golang and will provide an opportunity to get a feel for the language by creating a small centralized Blockchain.
 ## Katacode
 
-[Katacoda Workshop](http://bit.ly/2OCaB4O)
+[Katacoda Workshop](http://bit.ly/G0Bl0ck)
 
 ## Resources
 
@@ -16,9 +15,11 @@ If you are interested in learning more about Go or Blockchain, here are some res
 
 [Exercism](https://exercism.io/) - Code practise(not just in Go!)
 
-[Golang Weekly](https://golangweekly.com/) - An awesome newsletter.
+[Golang Weekly](https://golangweekly.com/) - An awesome newsletter
 
 [Go by Example](https://gobyexample.com/) - Examples of everything in go (variables, structs, loops)
+
+[GoRoutines and Channels](https://medium.com/@trevor4e/learning-gos-concurrency-through-illustrations-8c4aff603b3) Excellent illustrated article explaining Go's concurrency model
 
 [Games with Go](https://gameswithgo.org/) Fancy making a game with Go?
 
