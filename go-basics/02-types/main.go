@@ -10,6 +10,6 @@ func main() {
 
 	// This will Error!
 	var wolf string
-	// wolf = 5
+	wolf = 5
 	fmt.Println(wolf)
 }

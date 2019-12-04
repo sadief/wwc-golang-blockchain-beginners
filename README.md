@@ -2,11 +2,6 @@
 
 Here you will find the exercises to follow along with the workshop `Golang and Blockchain for Beginners` at Women Who Code CONNECT NYC on December 5th. This workshop will hopefully be accessible to those brand new to Golang and will provide an opportunity to get a feel for the language by creating a simple, Blockchain. These are step by step, to accommodate being able to follow along with the live coding. The slides will have the number for each step that you can jump ahead to.
 
-
-## Slides
-
-You can find the slides for the workshop [here](FILL IN)
-
 ## Katacode
 
 [Katacoda Workshop](http://bit.ly/2OCaB4O)
@@ -19,7 +14,7 @@ If you are interested in learning more about Go or Blockchain, here are some res
 
 [Gophercises](https://gophercises.com/) - Go coding exercises
 
-[Exercism](https://exercism.io/) - Code practise(not jsut in Go!)
+[Exercism](https://exercism.io/) - Code practise(not just in Go!)
 
 [Golang Weekly](https://golangweekly.com/) - An awesome newsletter.
 
