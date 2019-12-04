@@ -6,6 +6,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"log"
+	"net"
 	"net/http"
 	"time"
 )
@@ -29,8 +30,8 @@ const port = ":8080"
 
 func main() {
 	createGenesisBlock()
-
-	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+	sm := http.NewServeMux()
+	sm.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		switch r.Method {
 		case "GET":
 			getBlockchain(w, r)
@@ -40,7 +41,13 @@ func main() {
 	})
 
 	log.Printf("Listening on port %v", port)
-	http.ListenAndServe(port, nil)
+
+	l, err := net.Listen("tcp4", "0.0.0.0:8080")
+	if err != nil {
+		log.Fatal(err)
+	}
+	log.Fatal(http.Serve(l, sm))
+	// http.ListenAndServe(port, nil)
 }
 
 func createGenesisBlock() {
