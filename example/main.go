@@ -6,8 +6,8 @@ import (
 	"encoding/json"
 	"fmt"
 	"log"
-	"net"
 	"net/http"
+	"strings"
 	"time"
 )
 
@@ -26,12 +26,19 @@ type Block struct {
 
 var Blockchain []Block
 
-const port = ":8080"
+type CountedVotes struct {
+	Cats int
+	Dogs int
+}
+
+var countedVotes CountedVotes
+
+const port = ":3000"
 
 func main() {
 	createGenesisBlock()
-	sm := http.NewServeMux()
-	sm.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+
+	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		switch r.Method {
 		case "GET":
 			getBlockchain(w, r)
@@ -41,13 +48,7 @@ func main() {
 	})
 
 	log.Printf("Listening on port %v", port)
-
-	l, err := net.Listen("tcp4", "0.0.0.0:8080")
-	if err != nil {
-		log.Fatal(err)
-	}
-	log.Fatal(http.Serve(l, sm))
-	// http.ListenAndServe(port, nil)
+	http.ListenAndServe(port, nil)
 }
 
 func createGenesisBlock() {
@@ -76,6 +77,16 @@ func addNewBlock(w http.ResponseWriter, r *http.Request) {
 	}
 	defer r.Body.Close()
 
+	if strings.ToLower(v.Candidate) == "cats" {
+		countedVotes.Cats++
+	}
+
+	if strings.ToLower(v.Candidate) == "dogs" {
+		countedVotes.Dogs++
+	}
+
+	log.Printf("Votes are being calculated: \nCats: %v \nDogs: %v", countedVotes.Cats, countedVotes.Dogs)
+
 	lastBlock := Blockchain[len(Blockchain)-1]
 	newBlock := createNewBlock(lastBlock, v.Voter, v.Candidate)
 	Blockchain = append(Blockchain, newBlock)
@@ -100,3 +111,5 @@ func createNewBlock(prevBlock Block, Voter, Candidate string) Block {
 	newBlock.Hash = createHash(newBlock)
 	return newBlock
 }
+
+// curl -X POST http://6c038964.ngrok.io -d '{"Voter": "Sadie", "Candidate": "Cats"}'
